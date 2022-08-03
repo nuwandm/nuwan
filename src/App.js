@@ -8,8 +8,6 @@ function App() {
   return(
     <div>
          <NameList/>
-         <p>lorem
-         </p>
     </div>
   )
 }
