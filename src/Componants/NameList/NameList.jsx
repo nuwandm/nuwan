@@ -7,7 +7,7 @@ function NameList() {
     <React.Fragment>
       <h1>Course participants Name List</h1>
         <ul>
-          <ListItems NO="01" name="Nuwan Madusanka"/>
+          <ListItems NO="01" name="Nuwan Madusanka" couse = 'React'/>
           <ListItems NO="02" name="Udara Maduranga"/>
           <ListItems NO="03" name="Kasun Kalhara"/>
           <ListItems NO="04" name="Tharindu Nalinda"/>
