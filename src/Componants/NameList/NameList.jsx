@@ -51,10 +51,14 @@ function NameList() {
 
   return (
     <React.Fragment>
-      <h1>Course participants Name List</h1>
-      <ul>
+      
+      <div className="container mt-4">
+        <ul className="list-group">
         {nameListComponant()}
       </ul>
+      </div>
+
+      
      
     </React.Fragment>
   )
