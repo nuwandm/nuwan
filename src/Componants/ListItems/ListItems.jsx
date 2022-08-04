@@ -5,16 +5,10 @@ import moment from "moment";
 function ListItems(props) {
     return (
         <React.Fragment>
-            <p>
-                <img src={props.avater} /> {props.name}</p>
+            <p><img src={props.avater} /> {props.name}</p>
             <p> e-mail: {props.email}</p>
             <p> City: {props.city}</p>
-
-            {/* // formating date to british pattern method one */}
-            {/* <p> Birthday: {' '}
-                {new Intl.DateTimeFormat('en-GB').format(new Date(props.birthday))}</p>   */}
-
-            {/* // formating date to british pattern using javascript liberary method two (Get  library - npm install moment) */}
+            {/* // formating date to british style using javascript liberary method two (Get  library - npm install moment) */}
             <p> Birthday: {moment(props.birthday).format('DD-MM-YYYY')}</p>  
         </React.Fragment>
     )
