@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect} from "react";
 import ListItems from "../ListItems/ListItems";
 
 
@@ -32,6 +32,9 @@ function NameList() {
   ]
   );
 
+  useEffect(()=>{
+    Console.log("render method called");
+  })
 
   const nameListComponant = () => {
     return (
