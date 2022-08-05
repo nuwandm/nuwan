@@ -3,7 +3,7 @@ import ListItems from "../ListItems/ListItems";
 
 
 function NameList() {
-
+  const [loadData, setLoadData]= useState(new Date);
   const [nameList, setNameList] = useState([
     {
       id: 1,
@@ -33,8 +33,12 @@ function NameList() {
   );
 
   useEffect(()=>{
-    Console.log("render method called");
-  })
+     fetch("https://www.randomuser.me/api").then(Response =>{
+      return Response.json();
+     }).then(ResponseData =>{
+      setNameList(nameList=> [...nameList,ResponseData.results[0]])
+     });
+  },[loadData]);
 
   const nameListComponant = () => {
     return (
@@ -56,21 +60,7 @@ function NameList() {
   }
 
   const addUserHandler = () => {
-    const newUser =
-    {
-      id: 4,
-      "name": { "title": 'Mr', "first": 'Thiwanka', "last": 'Gayashan' },
-      "location": { city: 'Gonawala' },
-      "email": "Thiwankagayashan@gmail.com",
-      "dob": { "date": "2000-03-08T15:13:16.688Z", "age": 30 },
-      "picture": { "medium": "https://randomuser.me/api/portraits/med/men/66.jpg", },
-    }
-    // setNameList(nameList => nameList.concat(newUser));
-
-    // spread operator
-    setNameList(nameList=>[...nameList,newUser]);
-
-
+    setLoadData(new Date);
   }
 
 
